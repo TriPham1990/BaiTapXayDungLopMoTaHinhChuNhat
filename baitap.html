@@ -5,34 +5,37 @@
     <title>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</title>
 </head>
 <body>
-<canvas id="myCanvas" width="1300px" height="500px" style="border: 1px solid #d3d3d3;"></canvas><br>
+<canvas id="myCanvas" width="1300px" height="500px" style="border: 1px solid #d3d3d3;"></canvas>
+<br>
 <script>
-     function Rectangle(width,height){
+    let Rectangle = function (width, height) {
         this.width = width;
         this.height = height;
-        this.setHeight = function(height){
+        this.setHeight = function (height) {
             this.height = height;
         };
-        this.setWidth =function(width){
+        this.setWidth = function (width) {
             this.width = width;
         };
-        this.getAcreage = function(){
-            return this.width*this.height;
+        this.getAcreage = function () {
+            return this.width * this.height;
         };
-        this.getPerimeter = function() {
-            return ((this.width+this.height)*2);
+        this.getPerimeter = function () {
+            return ((this.width + this.height) * 2);
         }
-     }
-     function printRectangle(inputRectangle){
-         let ctx = document.getElementById("myCanvas").getContext("2d");
-         ctx.fillRect(10,10,inputRectangle.width,inputRectangle.height);
-     }
-     let newRectangle = new Rectangle(200,100);
-     printRectangle(newRectangle);
-     newRectangle.setWidth(40);
-     newRectangle.setHeight(20);
-     document.write(newRectangle.getAcreage()+ '<br>');
-     document.write(newRectangle.getPerimeter());
+    };
+
+    function printRectangle(inputRectangle) {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.fillRect(10, 10, inputRectangle.width, inputRectangle.height);
+    }
+
+    let newRectangle = new Rectangle(200, 100);
+    printRectangle(newRectangle);
+    newRectangle.setWidth(40);
+    newRectangle.setHeight(20);
+    document.write(newRectangle.getAcreage() + '<br>');
+    document.write(newRectangle.getPerimeter());
 
 
 </script>
